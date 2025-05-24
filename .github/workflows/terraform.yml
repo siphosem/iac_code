@@ -37,8 +37,8 @@ jobs:
         - name: Terraform Init
           id: init
           run: terraform init -backend-config "bucket=$BUCKET_TF_STATE"
-           env: # <--- THIS 'env' BLOCK IS CRUCIAL
-          BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
+          env: # <--- THIS 'env' BLOCK IS CRUCIAL
+            BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
 
         - name: Terraform Format
           id: fmt
